@@ -45,3 +45,10 @@ Verify destruction of image and container
 $ docker image ls|grep nginx
 $ docker ps|grep nginx
 $ terraform show
+```
+
+## Reference
+
+* [Docker provider documentation](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs)
+* [Terraform registry](https://registry.terraform.io/)
+* [Terraform](https://developer.hashicorp.com/terraform)
