@@ -30,6 +30,11 @@ Show the state of your infrastructure
 $ terraform show
 ```
 
+Show a list of managed resources
+```bash
+$ terraform state list
+```
+
 Destroy provisioned resources
 ```bash
 $terraform destroy
