@@ -70,7 +70,7 @@ $ terraform state show docker_container.nginx
 
 ## Destroy provisioned resources
 ```bash
-$terraform destroy
+$ terraform destroy
 ```
 
 Verify destruction of image and container
