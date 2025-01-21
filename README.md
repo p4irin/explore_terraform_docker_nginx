@@ -1,8 +1,8 @@
 # Explore Terraform
 
-## Provision and manage a Docker container running a default nginx setup
+ Provision and manage a Docker container running a default nginx setup
 
-### Provision resources declared in `main.tf`
+## Provision resources declared in `main.tf`
 
 Initialize the project: downloads plugin/provider to interact with Docker
 ```bash
@@ -35,7 +35,40 @@ Show a list of managed resources
 $ terraform state list
 ```
 
-Destroy provisioned resources
+## Change the docker_container resource
+
+Change the external port of the container to 8080
+
+```hcl
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+  name  = "nginx"
+
+  ports {
+    internal = 80
+    external = 8080
+  }
+```
+
+Apply the resource change. The port of a running container can't be changed. Terraform will destroy the existing container and replace it with a new one.
+
+```bash
+$ terraform apply
+```
+
+Verify the new container's external port is 8080
+
+```bash
+$ docker ps
+```
+or visit http://localhost:8080.
+or
+
+```bash
+$ terraform state show docker_container.nginx
+```
+
+## Destroy provisioned resources
 ```bash
 $terraform destroy
 ```
