@@ -68,6 +68,31 @@ or
 $ terraform state show docker_container.nginx
 ```
 
+## Use a variable for the container name
+
+Refer to the content of `variables.tf` which declares the `container_name` variable used in `main.tf`.
+
+With these files and variable declaration in place, applying the configuration
+
+```bash
+$ terraform apply
+...
+```
+
+wil result in a container with the default name `ExampleNginxContainer`. Verify with
+
+```bash
+$ docker ps
+```
+
+When applying the config. you can pass a name of your choosing with the `-var` option:
+
+```bash
+$ terraform apply -var "container_name=ADefaultNginxSetup"
+```
+### Reference
+
+* [Customize Terraform configuration with variables](https://developer.hashicorp.com/terraform/tutorials/configuration-language/variables)
 ## Destroy provisioned resources
 ```bash
 $ terraform destroy
