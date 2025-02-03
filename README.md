@@ -94,6 +94,10 @@ $ terraform apply -var "container_name=ADefaultNginxSetup"
 
 * [Customize Terraform configuration with variables](https://developer.hashicorp.com/terraform/tutorials/configuration-language/variables)
 
+### Labs
+* [lab](https://kodekloud.com/pages/free-labs/terraform/terraform-variables)
+* [lab](https://kodekloud.com/pages/free-labs/terraform/terraform-variables-2)
+
 ## Query and display data
 
 Refer to the file `outputs.tf`. It declares _outputs_ that query/represents the nginx _container id_ and _image id_.
@@ -110,6 +114,9 @@ image_id = "sha256:9bea9f..."
 
 * [Output data from Terraform](https://developer.hashicorp.com/terraform/tutorials/configuration-language/outputs)
 
+### Labs
+
+* [lab](https://kodekloud.com/pages/free-labs/terraform/terraform-output-variables)
 ## Destroy provisioned resources
 ```bash
 $ terraform destroy
